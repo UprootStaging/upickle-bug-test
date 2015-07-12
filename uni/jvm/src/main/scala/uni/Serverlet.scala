@@ -1,5 +1,7 @@
 package uni
 
+import scala.concurrent.ExecutionContext.Implicits.global
+
 class UniServlet {
   def handlePost() = {
     val s = Seq("")
