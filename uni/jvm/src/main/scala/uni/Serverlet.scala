@@ -7,12 +7,12 @@ class UniServlet {
     val s = Seq("")
     val e = ""
 
-    val result = AutowireServer.route[Api](UniServer)(
-      autowire.Core.Request(s, upickle.default.read[Map[String, String]](e))
-    )
+    // This also fails, but with a different error.
+    // upickle.default.read[uni.Form]("{}")
+
+    val result = upickle.default.read[(uni.Form, Map[String, String])]("{}")
 
     println(result)
-
   }
 
 }
